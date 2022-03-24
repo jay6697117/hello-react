@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #ccc;
+}
+
+.title {
+  border-bottom: 1px solid #888;
+}
+
+.title-text {
+  background-color: rgba(0, 100, 0, 0.8);
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.h2-tag {
+  background-color: rgba(128, 0, 128, 0.5);
+  padding: 10px 0 10px 10px;
+}
+
+.func {
+  padding: 10px 0 10px 10px;
+}
+
+.func > .btn {
+  display: inline-block;
+  background-color: rgba(153, 205, 50, 0.8);
+  border: 1px solid #333;
+  padding: 2px 20px;
+  border-radius: 14px;
+}
+
+.main {
+  background-color: rgba(255, 0, 0, 0.5);
+  padding: 10px 0 10px 10px;
+}
+
+.footer {
+  background-color: rgba(0, 0, 255, 0.5);
+  padding: 10px 0 10px 10px;
+}
