@@ -39,7 +39,7 @@ class LikeButton extends Component {
     //   isLiked: !this.state.isLiked
     // });
 
-    this.props.likedText = '啦啦啦';
+    // this.props.likedText = '啦啦啦';
     this.setState(
       {
         isLiked: !this.state.isLiked
@@ -55,7 +55,7 @@ class LikeButton extends Component {
   }
   render() {
     console.log('LikeButton render this.props:', this.props);
-    const likeBtnClass = this.state.isLiked ? 'like-btn like-btn-cancel' : 'like-btn like-btn-yes';
+    const likeBtnClass = !this.state.isLiked ? 'like-btn like-btn-cancel' : 'like-btn like-btn-yes';
     return (
       <div className={likeBtnClass} onClick={this.handleClickLikeButton.bind(this, 'hello LikeButton')}>
         {JSON.stringify(this.state.isLiked)} - {this.state.isLiked ? this.props.likedText : this.props.unLikedText} 👍
@@ -65,6 +65,14 @@ class LikeButton extends Component {
 }
 
 class Header extends Component {
+  constructor() {
+    super();
+    this.state = { likedText: '取消1', unLikedText: '点赞1' };
+  }
+  handleHeaderBtnClick() {
+    console.log('handleHeaderBtnClick run');
+    this.setState({ likedText: '已赞2', unLikedText: '未赞2' });
+  }
   renderBl(bool, dom1, dom2) {
     return bool ? dom1 : dom2;
   }
@@ -86,8 +94,11 @@ class Header extends Component {
         </h2>
         <div className='func'>
           {this.renderBl(bl, btn1, btn2)}
-          {/* <LikeButton likedText='已赞' unLikedText='赞' onClick={param => param} /> */}
-          <LikeButton />
+          <LikeButton likedText={this.state.likedText} unLikedText={this.state.unLikedText} onClick={param => param} />
+          {/* <LikeButton /> */}
+          <button style={{ 'margin-left': '10px', padding: '2px 10px' }} onClick={this.handleHeaderBtnClick.bind(this)}>
+            点击改变
+          </button>
         </div>
       </div>
     );
