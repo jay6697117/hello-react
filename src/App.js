@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import logo from './assets/images/logo.svg';
 import './assets/style/App.css';
 
@@ -17,6 +17,27 @@ class Title extends Component {
         </h1>
         <img src={logo} className='logo' alt='logo' />
       </div>
+    );
+  }
+}
+
+class LikeButton extends Component {
+  constructor() {
+    super();
+    this.state = { isLiked: false };
+  }
+  handleClickLikeButton(val, e) {
+    console.log('handleClickOnLikeButton val:', val);
+    console.log('handleClickOnLikeButton e:', e);
+    this.setState({
+      isLiked: !this.state.isLiked
+    });
+  }
+  render() {
+    return (
+      <button className='like-btn' onClick={this.handleClickLikeButton.bind(this, 'hello LikeButton')}>
+        {this.state.isLiked ? '取消' : '点赞'} 👍
+      </button>
     );
   }
 }
@@ -41,7 +62,10 @@ class Header extends Component {
         <h2 className={cn}>
           这本React学习小书 - {msg} - {foo()}
         </h2>
-        <div className='func'>{this.renderBl(bl, btn1, btn2)}</div>
+        <div className='func'>
+          {this.renderBl(bl, btn1, btn2)}
+          <LikeButton />
+        </div>
       </div>
     );
   }
