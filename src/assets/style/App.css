@@ -62,9 +62,24 @@
   margin: 0 auto;
 }
 
-.like-btn {
+.like-btn-yes,
+.like-btn-cancel {
   margin-left: 10px;
-  padding: 2px 10px;
+  display: inline-block;
+  background-color: rgba(153, 205, 50, 0.8);
+  border: 1px solid #333;
+  padding: 2px 20px;
+  border-radius: 14px;
+}
+
+.like-btn-yes {
+  background-color: rgba(0, 100, 0, 0.5);
+  color: #fff;
+}
+
+.like-btn-cancel {
+  background-color: #fff;
+  color: #333;
 }
 
 .h2-tag {

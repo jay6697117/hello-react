@@ -4,10 +4,10 @@ import './assets/style/App.css';
 
 class Title extends Component {
   handleTitleClick(val, e) {
-    console.log('val:', val);
-    console.log('this:', this);
-    console.log('e:', e);
-    console.log('输出:', e.target.innerHTML);
+    console.log('handleTitleClick val:', val);
+    console.log('handleTitleClick this:', this);
+    console.log('handleTitleClick e:', e);
+    console.log('handleTitleClick 输出:', e.target.innerHTML);
   }
   render() {
     return (
@@ -22,9 +22,10 @@ class Title extends Component {
 }
 
 class LikeButton extends Component {
-  constructor() {
-    super();
-    this.state = { isLiked: false };
+  constructor(props) {
+    console.log('LikeButton constructor props:', props);
+    super(props);
+    this.state = { name: '张金辉', age: 34, isLiked: false };
   }
   handleClickLikeButton(val, e) {
     console.log('handleClickOnLikeButton val:', val);
@@ -34,10 +35,11 @@ class LikeButton extends Component {
     });
   }
   render() {
+    const likeBtnClass = this.state.isLiked ? 'like-btn-cancel' : 'like-btn-yes';
     return (
-      <button className='like-btn' onClick={this.handleClickLikeButton.bind(this, 'hello LikeButton')}>
+      <div className={likeBtnClass} onClick={this.handleClickLikeButton.bind(this, 'hello LikeButton')}>
         {this.state.isLiked ? '取消' : '点赞'} 👍
-      </button>
+      </div>
     );
   }
 }
