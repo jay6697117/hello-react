@@ -27,18 +27,28 @@ class LikeButton extends Component {
     super(props);
     this.state = { name: '张金辉', age: 34, isLiked: false };
   }
-  handleClickLikeButton(val, e) {
+  async handleClickLikeButton(val, e) {
     console.log('handleClickOnLikeButton val:', val);
     console.log('handleClickOnLikeButton e:', e);
-    this.setState({
-      isLiked: !this.state.isLiked
-    });
+    console.log('handleClickOnLikeButton this.state.isLiked 000:', this.state.isLiked);
+    // await this.setState({
+    //   isLiked: !this.state.isLiked
+    // });
+    this.setState(
+      {
+        isLiked: !this.state.isLiked
+      },
+      () => {
+        console.log('handleClickOnLikeButton this.state.isLiked 111:', this.state.isLiked);
+      }
+    );
+    console.log('handleClickOnLikeButton this.state.isLiked 222:', this.state.isLiked);
   }
   render() {
     const likeBtnClass = this.state.isLiked ? 'like-btn-cancel' : 'like-btn-yes';
     return (
       <div className={likeBtnClass} onClick={this.handleClickLikeButton.bind(this, 'hello LikeButton')}>
-        {this.state.isLiked ? '取消' : '点赞'} 👍
+        {JSON.stringify(this.state.isLiked)} - {this.state.isLiked ? '取消' : '点赞'} 👍
       </div>
     );
   }
