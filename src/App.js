@@ -22,6 +22,7 @@ class Title extends Component {
 }
 
 class LikeButton extends Component {
+  static defaultProps = { likedText: '取消', unLikedText: '点赞' };
   // constructor(props) {
   // console.log('LikeButton constructor props:', props);
   // super(props);
@@ -53,10 +54,9 @@ class LikeButton extends Component {
   render() {
     console.log('LikeButton render this.props:', this.props);
     const likeBtnClass = this.state.isLiked ? 'like-btn like-btn-cancel' : 'like-btn like-btn-yes';
-    const words = this.props.words || { likedText: '取消', unLikedText: '点赞' };
     return (
       <div className={likeBtnClass} onClick={this.handleClickLikeButton.bind(this, 'hello LikeButton')}>
-        {JSON.stringify(this.state.isLiked)} - {this.state.isLiked ? words.likedText : words.unLikedText} 👍
+        {JSON.stringify(this.state.isLiked)} - {this.state.isLiked ? this.props.likedText : this.props.unLikedText} 👍
       </div>
     );
   }
@@ -84,7 +84,8 @@ class Header extends Component {
         </h2>
         <div className='func'>
           {this.renderBl(bl, btn1, btn2)}
-          <LikeButton words={{ likedText: '已赞', unLikedText: '赞' }} onClick={param => param} />
+          {/* <LikeButton likedText='已赞' unLikedText='赞' onClick={param => param} /> */}
+          <LikeButton />
         </div>
       </div>
     );
