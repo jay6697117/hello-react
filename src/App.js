@@ -38,6 +38,8 @@ class LikeButton extends Component {
     // await this.setState({
     //   isLiked: !this.state.isLiked
     // });
+
+    this.props.likedText = '啦啦啦';
     this.setState(
       {
         isLiked: !this.state.isLiked
