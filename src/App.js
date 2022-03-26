@@ -96,7 +96,7 @@ class Header extends Component {
           {this.renderBl(bl, btn1, btn2)}
           <LikeButton likedText={this.state.likedText} unLikedText={this.state.unLikedText} onClick={param => param} />
           {/* <LikeButton /> */}
-          <button style={{ 'margin-left': '10px', padding: '2px 10px' }} onClick={this.handleHeaderBtnClick.bind(this)}>
+          <button style={{ marginLeft: '10px', padding: '2px 10px' }} onClick={this.handleHeaderBtnClick.bind(this)}>
             点击改变
           </button>
         </div>
@@ -110,6 +110,7 @@ class Main extends Component {
     return <div className='main'>This is Main ...</div>;
   }
 }
+
 class Footer extends Component {
   render() {
     return <div className='footer'>This is Footer content ...</div>;
