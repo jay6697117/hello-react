@@ -1,7 +1,7 @@
 .app {
   width: 80%;
   margin: 0 auto;
-  padding-top: 20px;
+  padding: 20px 0;
 }
 
 .header {
@@ -70,7 +70,12 @@
   padding: 10px 0 10px 10px;
 }
 
-.users {
+.users0 {
+  margin-bottom: 20px;
+  background-color: skyblue;
+}
+.users1 {
+  background-color: lightgreen;
   margin-bottom: 20px;
 }
 

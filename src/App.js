@@ -142,9 +142,32 @@ const Footer = function () {
 class Users extends Component {
   render() {
     console.log('Users this.props', this.props);
+    // const usersElements = [];
+    // for (const item of this.props.users) {
+    //   usersElements.push(
+    //     <div className='user' key={item.id}>
+    //       <div>username:{item.username}</div>
+    //       <div>age:{item.age}</div>
+    //       <div>gender:{item.gender}</div>
+    //     </div>
+    //   );
+    // }
+    const users = this.props.users || [];
     return (
-      <div className='users'>
-        {this.props.users.map(item => {
+      <div className='users0'>
+        {/* {[
+          <div className='user' key='1'>
+            username:zjh
+          </div>,
+          <div className='user' key='2'>
+            age:32
+          </div>,
+          <div className='user' key='3'>
+            gender:男
+          </div>
+        ]} */}
+        {/* {usersElements} */}
+        {users.map(item => {
           return (
             <div className='user' key={item.id}>
               <div>username:{item.username}</div>
@@ -153,6 +176,21 @@ class Users extends Component {
             </div>
           );
         })}
+      </div>
+    );
+  }
+}
+
+class User extends Component {
+  render() {
+    const user = this.props.user;
+    console.log('User render user:', user);
+    if (!user) return null;
+    return (
+      <div className='user'>
+        <div>username:{user.username || ''}</div>
+        <div>age:{user.age || ''}</div>
+        <div>gender:{user.gender || ''}</div>
       </div>
     );
   }
@@ -174,6 +212,13 @@ class App extends Component {
     return (
       <div className='app'>
         <Users users={this.state.users} />
+        <div className='users1'>
+          {this.state.users.map((user, i) => (
+            <User key={user.id} user={user} />
+          ))}
+        </div>
+
+        <User />
         <Header />
         <Main />
         <Footer />
