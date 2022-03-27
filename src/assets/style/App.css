@@ -69,3 +69,15 @@
   background-color: rgba(0, 0, 255, 0.5);
   padding: 10px 0 10px 10px;
 }
+
+.users {
+  margin-bottom: 20px;
+}
+
+.user {
+  border-top: 1px solid #000;
+  padding: 10px;
+}
+.user:last-child {
+  border-bottom: 1px solid #000;
+}

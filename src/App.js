@@ -105,22 +105,75 @@ class Header extends Component {
   }
 }
 
-class Main extends Component {
-  render() {
-    return <div className='main'>This is Main ...</div>;
-  }
-}
+// class Main extends Component {
+//   render() {
+//     return <div className='main'>This is Main ...</div>;
+//   }
+// }
+// function Main() {
+//   return <div className='main'>This is Main ...</div>;
+// }
+const Main = props => {
+  console.log('Main sayHi props 0:', props);
+  const sayHi = (val, e) => {
+    console.log('Main sayHi e:', e);
+    console.log('Main sayHi props 1:', props);
+    alert(`${val} Main...`);
+  };
+  return (
+    <div onClick={sayHi.bind(null, 'hello 666 ')} className='main'>
+      This is Main ...
+    </div>
+  );
+};
 
-class Footer extends Component {
+// class Footer extends Component {
+//   render() {
+//     return <div className='footer'>This is Footer content ...</div>;
+//   }
+// }
+// function Footer() {
+//   return <div className='footer'>This is Footer content ...</div>;
+// }
+const Footer = function () {
+  return <div className='footer'>This is Footer content ...</div>;
+};
+
+class Users extends Component {
   render() {
-    return <div className='footer'>This is Footer content ...</div>;
+    console.log('Users this.props', this.props);
+    return (
+      <div className='users'>
+        {this.props.users.map(item => {
+          return (
+            <div className='user' key={item.id}>
+              <div>username:{item.username}</div>
+              <div>age:{item.age}</div>
+              <div>gender:{item.gender}</div>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      users: [
+        { id: 1, username: 'Jerry', age: 21, gender: 'male' },
+        { id: 2, username: 'Tomy', age: 22, gender: 'male' },
+        { id: 3, username: 'Lily', age: 19, gender: 'female' },
+        { id: 4, username: 'Lucy', age: 20, gender: 'female' }
+      ]
+    };
+  }
   render() {
     return (
       <div className='app'>
+        <Users users={this.state.users} />
         <Header />
         <Main />
         <Footer />
