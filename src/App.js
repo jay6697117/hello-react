@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './assets/images/logo.svg';
-import './assets/style/App.css';
+import './assets/style/app.css';
 
 class Title extends Component {
   handleTitleClick(val, e) {

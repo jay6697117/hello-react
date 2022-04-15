@@ -1,0 +1,10 @@
+.comment-app {
+  min-height: 100vh;
+  background-color: #eee;
+}
+
+
+.comment-list-item{
+  background-color: purple;
+  margin-top: 5px;
+}
