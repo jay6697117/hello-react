@@ -1,6 +1,8 @@
 .comment-app {
-  box-sizing: border-box;
-  min-height: 100vh;
-  background-color: #eee;
+  width: 100%;
+  max-width: 500px;
   padding: 20px;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
 }
