@@ -1,0 +1,8 @@
+.comment-item{
+  background-color: purple;
+  margin-bottom: 5px;
+}
+
+.comment-item:first-child{
+  margin-top: 0;
+}
