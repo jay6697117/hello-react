@@ -5,8 +5,8 @@ class CommentInput extends Component {
   constructor() {
     super();
     this.state = {
-      username: '我是用户名',
-      content: '我是评论内容'
+      username: '',
+      content: ''
     };
   }
 
@@ -27,9 +27,9 @@ class CommentInput extends Component {
   handleSubmit(event) {
     console.log('handleSubmit run');
     console.log('handleSubmit this.props:', this.props);
-    if (this.props.onInputSubmit) {
+    if (this.props.onSubmitComment) {
       const { username, content } = this.state;
-      this.props.onInputSubmit({ username, content });
+      this.props.onSubmitComment({ username, content });
       this.setState({
         content: ''
       });

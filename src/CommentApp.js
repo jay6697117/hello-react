@@ -10,19 +10,22 @@ class CommentApp extends Component {
       comments: []
     };
   }
-  handleInputSubmit(param) {
-    console.log('handleInputSubmit param:', param);
+  handleSubmitComment(param) {
+    console.log('handleSubmitComment param:', param);
     if (!param) return;
-    if (!param.username) return alert('用户名不能为空');
-    if (!param.content) return alert('评论内容不能为空');
-    this.state.comments.push(param);
-    console.log('handleInputSubmit this.state.comments:', this.state.comments);
-    this.setState({ comments: this.state.comments });
+    if (!param.username) return alert('用户名不能为空!');
+    if (!param.content) return alert('评论内容不能为空!');
+
+    const commentsTemp = [...this.state.comments];//浅拷贝
+    commentsTemp.push(param);
+    console.log('handleSubmitComment this.state.comments:', this.state.comments);
+    console.log('handleSubmitComment commentsTemp:', commentsTemp);
+    this.setState({ comments: commentsTemp });
   }
   render() {
     return (
       <div className='comment-app'>
-        <CommentInput onInputSubmit={this.handleInputSubmit.bind(this)} />
+        <CommentInput onSubmitComment={this.handleSubmitComment.bind(this)} />
         <CommentList comments={this.state.comments} />
       </div>
     );
