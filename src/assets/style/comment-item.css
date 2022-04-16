@@ -1,8 +1,19 @@
-.comment-item{
-  background-color: purple;
-  margin-bottom: 5px;
+/* 评论组件样式 */
+.comment-item {
+  display: flex;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  min-height: 50px;
 }
 
-.comment-item:first-child{
-  margin-top: 0;
+.comment-item .comment-username {
+  padding-right: 5px;
+  flex-shrink: 0;
+  color: #00a3cf;
+  font-style: italic;
+}
+
+.comment-item .comment-content {
+  margin: 0;
 }

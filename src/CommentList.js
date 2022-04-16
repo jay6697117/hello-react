@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import './assets/style/comment-list.css'
-import CommentItem from './CommentItem'
+import './assets/style/comment-list.css';
+import CommentItem from './CommentItem';
 
 class CommentList extends Component {
+  static defaultProps = {
+    comments: []
+  };
   render() {
+    console.log('CommentList render this.props.comments:', this.props.comments);
+    if (!(Array.isArray(this.props.comments) && this.props.comments.length > 0)) {
+      return null;
+    }
     return (
       <div className='comment-list'>
-        <CommentItem />
-        <CommentItem />
-        <CommentItem />
-        <CommentItem />
+        {this.props.comments.map((item, index) => {
+          return <CommentItem comment={item} key={index} />;
+        })}
       </div>
     );
   }
 }
 
-export default  CommentList;
+export default CommentList;

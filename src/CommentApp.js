@@ -4,12 +4,26 @@ import CommentInput from './CommentInput';
 import CommentList from './CommentList';
 
 class CommentApp extends Component {
+  constructor() {
+    super();
+    this.state = {
+      comments: []
+    };
+  }
+  handleInputSubmit(param) {
+    console.log('handleInputSubmit param:', param);
+    if (!param) return;
+    if (!param.username) return alert('用户名不能为空');
+    if (!param.content) return alert('评论内容不能为空');
+    this.state.comments.push(param);
+    console.log('handleInputSubmit this.state.comments:', this.state.comments);
+    this.setState({ comments: this.state.comments });
+  }
   render() {
     return (
       <div className='comment-app'>
-        <h1>我是CommentApp</h1>
-        <CommentInput />
-        <CommentList />
+        <CommentInput onInputSubmit={this.handleInputSubmit.bind(this)} />
+        <CommentList comments={this.state.comments} />
       </div>
     );
   }
