@@ -8,9 +8,7 @@ class CommentApp extends Component {
     return (
       <div className='comment-app'>
         <h1>我是CommentApp</h1>
-        <hr />
         <CommentInput />
-        <hr />
         <CommentList />
       </div>
     );
