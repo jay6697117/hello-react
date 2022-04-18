@@ -1,5 +1,5 @@
-# 进度: Lesson 14 实战分析：评论功能（一）
-- https://www.bookstack.cn/read/react-naive-book/caeba5be343a774e.md
+# 进度: Lesson 19 挂载阶段的组件生命周期（二）
+https://www.bookstack.cn/read/react-naive-book/6db671ec5b3fae37.md
 
 ### `npm start`
 
