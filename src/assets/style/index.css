@@ -5,3 +5,7 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+.index button {
+  padding: 2px 10px;
+}

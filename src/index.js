@@ -12,15 +12,16 @@ class Index extends Component {
     };
   }
   handleShowOrHide() {
+    const showHeader = !this.state.showHeader;
     this.setState({
-      showHeader: !this.state.showHeader
+      showHeader
     });
   }
   render() {
     return (
-      <div className="index">
+      <div className='index'>
         {this.state.showHeader ? <Header /> : null}
-        <button onClick={this.handleShowOrHide.bind(this)}>显示或者隐藏标题</button>
+        <button onClick={this.handleShowOrHide.bind(this)}>{this.state.showHeader ? '隐藏' : '显示'}Header</button>
       </div>
     );
   }
