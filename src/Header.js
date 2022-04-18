@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './assets/style/app.css';
 
 class Header extends Component {
   constructor() {

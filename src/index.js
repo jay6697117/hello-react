@@ -7,23 +7,23 @@ class Index extends Component {
   constructor() {
     super();
     this.state = {
-      isShowHeader: true
+      showHeader: true
     };
   }
   handleShowOrHide() {
     this.setState({
-      isShowHeader: !this.state.isShowHeader
+      showHeader: !this.state.showHeader
     });
   }
   render() {
     return (
       <div>
-        {this.state.isShowHeader ? <Header /> : null}
+        {this.state.showHeader ? <Header /> : null}
         <button onClick={this.handleShowOrHide.bind(this)}>显示或者隐藏标题</button>
       </div>
     );
   }
 }
 
-// ReactDOM.render(React.createElement(Header, null), document.getElementById('root'));
+// ReactDOM.render(React.createElement(Index, null), document.getElementById('root'));
 ReactDOM.render(<Index />, document.getElementById('root'));
