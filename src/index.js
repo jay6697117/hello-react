@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import './assets/style/base.css';
 import './assets/style/index.css';
 import Header from './Header';
 
