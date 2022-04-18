@@ -8,16 +8,15 @@ class CommentList extends Component {
   };
   render() {
     console.log('CommentList render this.props.comments:', this.props.comments);
-    if (!(Array.isArray(this.props.comments) && this.props.comments.length > 0)) {
-      return null;
-    }
-    return (
+
+    const listDom = (
       <div className='comment-list'>
         {this.props.comments.map((item, index) => {
           return <CommentItem comment={item} key={index} />;
         })}
       </div>
     );
+    return Array.isArray(this.props.comments) && this.props.comments.length > 0 ? listDom : null;
   }
 }
 
