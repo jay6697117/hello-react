@@ -17,7 +17,7 @@ class Index extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="index">
         {this.state.showHeader ? <Header /> : null}
         <button onClick={this.handleShowOrHide.bind(this)}>显示或者隐藏标题</button>
       </div>
