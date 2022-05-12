@@ -5,7 +5,7 @@ class Header extends Component {
     super();
     console.log('constructor 1');
   }
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     console.log('component will mount 2');
   }
   componentDidMount() {
