@@ -8,7 +8,7 @@ class Index extends Component {
   constructor() {
     super();
     this.state = {
-      showHeader: true
+      showHeader: false
     };
   }
   handleShowOrHide() {
