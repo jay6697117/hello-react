@@ -12,14 +12,15 @@ class Header extends Component {
   }
   componentWillMount() {
     console.log('component will mount 2');
-  }
-  componentDidMount() {
-    console.log('component did mount 4');
+    //异步处理
     this.mySetInterval(() => {
       this.setState({
         dateNow: new Date().Format('yyyy-MM-dd hh:mm:ss')
       });
     }, 1000);
+  }
+  componentDidMount() {
+    console.log('component did mount 4');
   }
   componentWillUnmount() {
     console.log('component will unmount 5');
@@ -42,7 +43,7 @@ class Header extends Component {
     rec(callback, delay);
   }
   render() {
-    console.log('render 3');
+    // console.log('render 3');
     return (
       <div className='header'>
         <h1 className='title'>当前时间:{this.state.dateNow}</h1>
