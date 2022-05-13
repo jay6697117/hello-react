@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import './assets/style/header.css';
+import Clock from './Clock';
 
 class Header extends Component {
   constructor() {
     super();
     console.log('constructor 1');
     this.state = {
-      dateNow: new Date().Format('yyyy-MM-dd hh:mm:ss'),
-      timer: null,
       result: null
     };
   }
   async componentWillMount() {
     console.log('component will mount 2');
+    this.apiFn();
+  }
+  componentDidMount() {
+    console.log('component did mount 4');
+  }
+  componentWillUnmount() {
+    console.log('component will unmount 5');
+  }
+  async apiFn() {
+    //异步处理
     let result = null;
     let response = await fetch('https://json-server-demo-rho.vercel.app/companies');
     if (response.ok) {
@@ -26,36 +35,6 @@ class Header extends Component {
     this.setState({
       result
     });
-
-    //异步处理
-    this.mySetInterval(() => {
-      this.setState({
-        dateNow: new Date().Format('yyyy-MM-dd hh:mm:ss')
-      });
-    }, 1000);
-  }
-  componentDidMount() {
-    console.log('component did mount 4');
-  }
-  componentWillUnmount() {
-    console.log('component will unmount 5');
-    clearTimeout(this.state.timer); //清除定时器
-    //设置timer 为 null
-    this.setState({
-      timer: null
-    });
-  }
-  mySetInterval(callback, delay) {
-    const rec = (callback, delay) => {
-      const timer = setTimeout(() => {
-        callback(); // 执行callback
-        rec(callback, delay); // 递归
-      }, delay);
-      this.setState({
-        timer
-      });
-    };
-    rec(callback, delay);
   }
   listHandle(arr) {
     if (arr && arr.length > 0) {
@@ -71,7 +50,7 @@ class Header extends Component {
     console.log('render 3');
     return (
       <div className='header'>
-        <h1 className='title'>当前时间:{this.state.dateNow}</h1>
+        <Clock />
         <div>{this.listHandle(this.state.result)}</div>
       </div>
     );
