@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './assets/style/header.css';
 import Clock from './Clock';
+import './assets/style/header.css';
 
 class Header extends Component {
   constructor() {
