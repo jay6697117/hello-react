@@ -28,5 +28,4 @@ class Index extends Component {
   }
 }
 
-// ReactDOM.render(React.createElement(Index, null), document.getElementById('root'));
 ReactDOM.render(<Index />, document.getElementById('root'));
