@@ -43,7 +43,7 @@ class Clock extends Component {
     rec(callback, delay);
   }
   render() {
-    console.log('render 3');
+    // console.log('render 3');
     return (
       <div className='clock'>
         <h1 className='time'>当前时间:{this.state.dateNow}</h1>
