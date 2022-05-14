@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Header from './Header';
 import './assets/style/base.css';
 import './assets/style/index.css';
-import Header from './Header';
 import './utils/date';
 
 class Index extends Component {
