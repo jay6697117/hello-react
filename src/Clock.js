@@ -9,7 +9,7 @@ class Clock extends Component {
       timer: null
     };
   }
-  async componentWillMount() {
+  componentWillMount() {
     console.log('Clock component will mount 2');
 
     //异步定时器
