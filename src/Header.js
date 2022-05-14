@@ -5,20 +5,20 @@ import './assets/style/header.css';
 class Header extends Component {
   constructor() {
     super();
-    console.log('constructor 1');
+    console.log('Header constructor 1');
     this.state = {
       result: null
     };
   }
   componentWillMount() {
-    console.log('component will mount 2');
+    console.log('Header component will mount 2');
     this.apiFn();
   }
   componentDidMount() {
-    console.log('component did mount 4');
+    console.log('Header component did mount 4');
   }
   componentWillUnmount() {
-    console.log('component will unmount 5');
+    console.log('Header component will unmount 5');
   }
   async apiFn() {
     //异步处理
@@ -47,7 +47,7 @@ class Header extends Component {
     }
   }
   render() {
-    console.log('render 3');
+    console.log('Header render 3');
     return (
       <div className='header'>
         <Clock />
