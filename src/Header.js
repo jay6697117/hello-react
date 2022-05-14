@@ -12,6 +12,7 @@ class Header extends Component {
   }
   componentWillMount() {
     console.log('Header component will mount 2');
+    //异步处理
     this.apiFn();
   }
   componentDidMount() {
