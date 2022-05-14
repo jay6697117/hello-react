@@ -13,9 +13,8 @@ class Index extends Component {
     };
   }
   handleShowOrHide() {
-    const showHeader = !this.state.showHeader;
     this.setState({
-      showHeader
+      showHeader: this.state.showHeader
     });
   }
   render() {
