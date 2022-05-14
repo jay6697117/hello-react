@@ -25,7 +25,7 @@ class Clock extends Component {
   componentWillUnmount() {
     console.log('Clock component will unmount 5');
     clearTimeout(this.state.timer); //清除定时器
-    //设置timer 为 null
+    //设置timer为 null
     this.setState({
       timer: null
     });
