@@ -10,7 +10,7 @@ class Header extends Component {
       result: null
     };
   }
-  async componentWillMount() {
+  componentWillMount() {
     console.log('component will mount 2');
     this.apiFn();
   }
@@ -51,7 +51,7 @@ class Header extends Component {
     return (
       <div className='header'>
         <Clock />
-        <div>{this.listHandle(this.state.result)}</div>
+        {this.listHandle(this.state.result)}
       </div>
     );
   }
