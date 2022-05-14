@@ -20,6 +20,7 @@ class Header extends Component {
   }
   componentWillUnmount() {
     console.log('Header component will unmount 5');
+    this.setState = () => false;
   }
   async apiFn() {
     //异步处理
