@@ -25,6 +25,8 @@ class Clock extends Component {
   // 一般来说，有些组件的启动工作是依赖 DOM 的，例如动画的启动，而 componentWillMount 的时候组件还没挂载完成，所以没法进行这些启动工作，这时候就可以把这些操作放在 componentDidMount 当中
   componentDidMount() {
     console.log('Clock component did mount 4');
+    console.log('Clock this.clock:', this.clock);
+    console.log('Clock this.clock.clientHeight:', this.clock.clientHeight)
   }
   // 组件从页面上销毁的时候，有时候需要一些数据的清理，例如定时器的清理，就会放在 componentWillUnmount 里面去做
   componentWillUnmount() {
@@ -47,7 +49,7 @@ class Clock extends Component {
   render() {
     // console.log('Clock render 3');
     return (
-      <div className='clock'>
+      <div className='clock' ref={clock => (this.clock = clock)}>
         <h1 className='time'>当前时间:{this.state.dateNow}</h1>
       </div>
     );
