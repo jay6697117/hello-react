@@ -26,7 +26,7 @@ class Clock extends Component {
   componentDidMount() {
     console.log('Clock component did mount 4');
     console.log('Clock this.clock:', this.clock);
-    console.log('Clock this.clock.clientHeight:', this.clock.clientHeight)
+    console.log('Clock this.clock.clientHeight:', this.clock.clientHeight);
   }
   // 组件从页面上销毁的时候，有时候需要一些数据的清理，例如定时器的清理，就会放在 componentWillUnmount 里面去做
   componentWillUnmount() {
