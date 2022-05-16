@@ -11,7 +11,7 @@ class AutoFocusInput extends Component {
   }
   componentDidMount() {
     console.log('AutoFocusInput componentDidMount this.input:', this.input);
-    console.log('AutoFocusInput componentDidMount this.autoFocusInput:', this.autoFocusInput);
+    console.log('AutoFocusInput componentDidMount this.autoFocusInput.clientHeight:', this.autoFocusInput.clientHeight);
 
     this.input.focus();
     this.timer = setTimeout(() => {
