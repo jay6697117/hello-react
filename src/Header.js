@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Clock from './Clock';
+import AutoFocusInput from './AutoFocusInput';
 import './assets/style/header.css';
 
 class Header extends Component {
@@ -49,11 +50,12 @@ class Header extends Component {
     }
   }
   render() {
-    console.log('Header render 3');
+    // console.log('Header render 3');
     return (
       <div className='header'>
+        <AutoFocusInput />
         <Clock />
-        {this.listHandle(this.state.result)}
+        <div className='list'>{this.listHandle(this.state.result)}</div>
       </div>
     );
   }

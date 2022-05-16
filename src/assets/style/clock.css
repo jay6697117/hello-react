@@ -1,0 +1,9 @@
+.clock {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.time {
+  font-size: 20px;
+  color: blue;
+}
