@@ -14,10 +14,15 @@ class AutoFocusInput extends Component {
     console.log('AutoFocusInput componentDidMount this.divDom:', this.divDom);
 
     this.input.focus();
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       console.log('blur run');
       this.input.blur();
     }, 5000);
+  }
+  // 组件从页面上销毁的时候，有时候需要一些数据的清理，例如定时器的清理，就会放在 componentWillUnmount 里面去做
+  componentWillUnmount() {
+    console.log('Clock component will unmount 5');
+    clearTimeout(this.timer); //清除定时器
   }
   render() {
     return (

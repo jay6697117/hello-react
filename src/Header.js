@@ -18,6 +18,8 @@ class Header extends Component {
   }
   componentDidMount() {
     console.log('Header component did mount 4');
+    console.log('this.clock:', this.clock);
+    console.log('this.autoFocusInput:', this.autoFocusInput);
   }
   componentWillUnmount() {
     console.log('Header component will unmount 5');
@@ -53,8 +55,8 @@ class Header extends Component {
     // console.log('Header render 3');
     return (
       <div className='header'>
-        <AutoFocusInput />
-        <Clock />
+        <AutoFocusInput ref={autoFocusInput => (this.autoFocusInput = autoFocusInput)} />
+        <Clock ref={clock => (this.clock = clock)} />
         <div className='list'>{this.listHandle(this.state.result)}</div>
       </div>
     );
