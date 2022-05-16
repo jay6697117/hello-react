@@ -11,15 +11,17 @@ class AutoFocusInput extends Component {
   }
   componentDidMount() {
     console.log('AutoFocusInput componentDidMount this.input:', this.input);
+    console.log('AutoFocusInput componentDidMount this.divDom:', this.divDom);
+
     this.input.focus();
     setTimeout(() => {
-      console.log('blur run')
+      console.log('blur run');
       this.input.blur();
     }, 5000);
   }
   render() {
     return (
-      <div className='autoFocusInput'>
+      <div className='autoFocusInput' ref={divDom => (this.divDom = divDom)}>
         <input ref={input => (this.input = input)} />
       </div>
     );
