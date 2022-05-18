@@ -9,6 +9,7 @@ class App extends Component {
       <div>
         <Card>
           <h2>React.js 小书 - children</h2>
+          123456
           <div>开源、免费、专业、简单</div>
           <div>
             订阅: <input />
