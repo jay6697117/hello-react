@@ -1,0 +1,18 @@
+.two-cols-layout {
+  padding: 0 20px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.sidebar {
+  padding: 0 4px;
+  width: 100px;
+  background-color: rgba(0, 0, 255, 0.5);
+}
+.main {
+  padding: 10px;
+  flex: 1;
+  background-color: rgba(0, 100, 0, 0.5);
+}

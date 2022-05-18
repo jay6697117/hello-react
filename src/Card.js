@@ -2,14 +2,23 @@ import React, { Component } from 'react';
 import './assets/style/card.css';
 
 class Card extends Component {
-  render () {
+  componentWillMount() {
+    console.log('this.props:', this.props);
+  }
+  render() {
+    const children = this.props.children ? [].concat(this.props.children) : [];
+    const cardClassName = children.length > 0 ? 'card' : '';
     return (
-      <div className='card'>
-        <div className='card-content'>
-          {this.props.content}
-        </div>
+      <div className={cardClassName}>
+        {children.map((item, index) => {
+          return (
+            <div className='card-content' key={index}>
+              {item}
+            </div>
+          );
+        })}
       </div>
-    )
+    );
   }
 }
 
