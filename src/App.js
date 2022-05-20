@@ -54,9 +54,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      content: '<h1 style="color:blue;background-color:red;">hello world</h1>',
-      commonStyle: { color: 'red', fontSize: '30px', textAlign: 'center' },
-      backgroundColor: 'blue',
+      content: '<h1 style="color:blue;background-color:red;padding:10px 0;">hello world</h1>',
+      commonStyle: { color: 'white', fontSize: '30px', textAlign: 'center', padding: '10px 0' },
+      backgroundColor: 'green',
       opacity: 0
     };
   }
@@ -78,8 +78,11 @@ class App extends Component {
     this.setState = () => false;
   }
   handleClick() {
+    const colorArr = ['green', 'purple', 'blue', 'red', 'cyan'];
+    const random = Math.floor(Math.random() * 5); // 0-4
+    console.log('random', random);
     this.setState({
-      backgroundColor: 'green',
+      backgroundColor: colorArr[random],
       opacity: 0
     });
   }
