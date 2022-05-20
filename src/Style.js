@@ -5,8 +5,8 @@ class Style extends Component {
   constructor() {
     super();
     this.state = {
-      content: '<h1 style="color:blue;background-color:red;padding:10px 0;">hello world</h1>',
-      commonStyle: { color: 'white', fontSize: '30px', textAlign: 'center', padding: '10px 0' },
+      content: '<h1 style="color:blue;background-color:red;padding:10px;">hello world</h1>',
+      commonStyle: { color: 'white', fontSize: '30px', textAlign: 'center', padding: '10px' },
       backgroundColor: 'green',
       opacity: 0
     };
@@ -41,8 +41,16 @@ class Style extends Component {
   render() {
     return (
       <div className='style'>
-        <button style={{ marginBottom: '20px', padding: '2px 10px' }} onClick={this.handleClick.bind(this)}>
-          点击
+        <button
+          style={{
+            margin: '20px 0 20px 10px',
+            padding: '2px 10px',
+            backgroundColor: '#ccc',
+            border: '1px solid #aaa',
+            borderRadius: '6px'
+          }}
+          onClick={this.handleClick.bind(this)}>
+          点 击
         </button>
         <div style={{ marginBottom: '20px' }} dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
         <div
