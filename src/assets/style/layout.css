@@ -1,5 +1,4 @@
 .two-cols-layout {
-  padding: 0 20px;
   height: 200px;
   display: flex;
   flex-direction: row;
@@ -7,7 +6,6 @@
   align-items: stretch;
 }
 .sidebar {
-  padding: 0 4px;
   width: 100px;
   background-color: rgba(0, 0, 255, 0.5);
 }

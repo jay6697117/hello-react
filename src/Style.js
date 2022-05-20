@@ -39,7 +39,7 @@ class Style extends Component {
 
   render() {
     return (
-      <div>
+      <div className='style'>
         <button style={{ marginBottom: '20px', padding: '2px 10px' }} onClick={this.handleClick.bind(this)}>
           点击
         </button>

@@ -7,7 +7,9 @@ import Style from './Style';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="app">
+        <Style />
+        <div style={{ height: '1px', margin: '20px 0', backgroundColor: '#ccc' }}></div>
         <Card>
           <h2>React.js 小书 - children</h2>
           123456
@@ -44,8 +46,6 @@ class App extends Component {
             <h1>我是内容啦啦啦啦啦啦</h1>
           </div>
         </Layout>
-        <div style={{ height: '1px', margin: '20px 0', backgroundColor: '#ccc' }}></div>
-        <Style />
       </div>
     );
   }
