@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './assets/style/app.css';
-import Card from './Card';
-import Layout from './Layout';
+// import Card from './Card';
+// import Layout from './Layout';
 
+/*
 class App extends Component {
   render() {
     return (
@@ -43,6 +44,61 @@ class App extends Component {
             <h1>我是内容啦啦啦啦啦啦</h1>
           </div>
         </Layout>
+      </div>
+    );
+  }
+}
+*/
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      content: '<h1 style="color:blue;background-color:red;">hello world</h1>',
+      commonStyle: { color: 'red', fontSize: '30px', textAlign: 'center' },
+      backgroundColor: 'blue',
+      opacity: 0
+    };
+  }
+  componentDidMount() {
+    setInterval(() => {
+      const opacity = this.state.opacity + 0.01;
+      if (opacity > 1) {
+        this.setState({
+          opacity: 1
+        });
+        return;
+      }
+      this.setState({
+        opacity
+      });
+    }, 20);
+  }
+  componentWillUnmount() {
+    this.setState = () => false;
+  }
+  handleClick() {
+    this.setState({
+      backgroundColor: 'green',
+      opacity: 0
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <button style={{ marginBottom: '20px', padding: '2px 10px' }} onClick={this.handleClick.bind(this)}>
+          点击
+        </button>
+        <div style={{ marginBottom: '20px' }} dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
+        <div
+          style={{
+            ...this.state.commonStyle,
+            backgroundColor: this.state.backgroundColor,
+            opacity: this.state.opacity
+          }}>
+          大家好啊
+        </div>
       </div>
     );
   }
