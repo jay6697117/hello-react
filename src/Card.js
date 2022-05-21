@@ -3,7 +3,7 @@ import './assets/style/card.css';
 
 class Card extends Component {
   componentWillMount() {
-    console.log('Card this.props:', this.props);
+    // console.log('Card this.props:', this.props);
   }
   render() {
     const children = this.props.children ? [].concat(this.props.children) : [];

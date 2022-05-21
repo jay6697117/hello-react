@@ -3,7 +3,7 @@ import './assets/style/layout.css';
 
 class Layout extends Component {
   render() {
-    console.log('Layout this.props.children', this.props.children)
+    // console.log('Layout this.props.children', this.props.children)
     return (
       <div className='two-cols-layout'>
         <div className='sidebar'>{this.props.children[0]}</div>

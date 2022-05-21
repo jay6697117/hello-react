@@ -3,11 +3,15 @@ import './assets/style/app.css';
 import Card from './Card';
 import Layout from './Layout';
 import Style from './Style';
+import Comment from './Comment';
 
 class App extends Component {
   render() {
     return (
-      <div className="app">
+      <div className='app'>
+        <Comment comment={1} />
+        {/* <Comment comment={{ username: '张金辉', content: '我是内容;我是内容;我是内容;我是内容;' }} /> */}
+        <div style={{ height: '1px', margin: '20px 0', backgroundColor: '#ccc' }}></div>
         <Style />
         <div style={{ height: '1px', margin: '20px 0', backgroundColor: '#ccc' }}></div>
         <Card>
