@@ -34,7 +34,6 @@ class CommentInput extends Component {
   }
 
   _saveUsername(username) {
-    console.log('_saveUsername run');
     localStorage.setItem('USERNAME', username);
   }
 
