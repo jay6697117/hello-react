@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
 import './assets/style/comment-input.css';
+import PropTypes from 'prop-types';
+console.log('PropTypes:', PropTypes);
 
 class CommentInput extends Component {
+  static propTypes = {
+    onSubmitComment: PropTypes.func.isRequired
+  };
+
   constructor() {
     super();
     this.state = {
-      username: 'zjh',
-      content: '666'
+      username: '',
+      content: ''
     };
+  }
+
+  componentDidMount() {
+    this.textareaDom.focus();
+  }
+
+  _saveUsername(username) {
+    console.log('_saveUsername run')
+    localStorage.setItem('USERNAME', username);
   }
 
   handleUsernameChange(event) {
@@ -15,6 +30,7 @@ class CommentInput extends Component {
     this.setState({
       username: event.target.value
     });
+    this._saveUsername(event.target.value);
   }
 
   handleContentChange(event) {
@@ -36,30 +52,23 @@ class CommentInput extends Component {
     }
   }
 
-  componentDidMount() {
-    console.log('this.inputDom:', this.inputDom);
-    console.log('this.inputDom.clientHeight:', this.inputDom.clientHeight);
-    console.log('this.inputDom.value :>> ', this.inputDom.value);
-  }
-
   render() {
     return (
       <div className='comment-input'>
         <div className='comment-field'>
           <div className='comment-field-label'>用户名:</div>
           <div className='comment-field-input'>
-            <input
-              ref={inputDom => (this.inputDom = inputDom)}
-              type='text'
-              value={this.state.username}
-              onChange={this.handleUsernameChange.bind(this)}
-            />
+            <input type='text' value={this.state.username} onChange={this.handleUsernameChange.bind(this)} />
           </div>
         </div>
         <div className='comment-field'>
           <div className='comment-field-label'>评论内容:</div>
           <div className='comment-field-input'>
-            <textarea value={this.state.content} onChange={this.handleContentChange.bind(this)} />
+            <textarea
+              ref={textareaDom => (this.textareaDom = textareaDom)}
+              value={this.state.content}
+              onChange={this.handleContentChange.bind(this)}
+            />
           </div>
         </div>
         <div className='comment-field-button'>
