@@ -16,21 +16,35 @@ class CommentInput extends Component {
     };
   }
 
+  componentWillMount() {
+    this._loadUsername();
+  }
+
   componentDidMount() {
     this.textareaDom.focus();
   }
 
+  _loadUsername() {
+    const username = localStorage.getItem('USERNAME');
+    if (username) {
+      this.setState({
+        username
+      });
+    }
+  }
+
   _saveUsername(username) {
-    console.log('_saveUsername run')
+    console.log('_saveUsername run');
     localStorage.setItem('USERNAME', username);
   }
 
   handleUsernameChange(event) {
     console.log('handleUsernameChange event.target.value:', event.target.value);
+    const username = event.target.value;
     this.setState({
-      username: event.target.value
+      username
     });
-    this._saveUsername(event.target.value);
+    this._saveUsername(username);
   }
 
   handleContentChange(event) {
