@@ -5,8 +5,8 @@ class CommentInput extends Component {
   constructor() {
     super();
     this.state = {
-      username: '',
-      content: ''
+      username: 'zjh',
+      content: '666'
     };
   }
 
@@ -36,13 +36,24 @@ class CommentInput extends Component {
     }
   }
 
+  componentDidMount() {
+    console.log('this.inputDom:', this.inputDom);
+    console.log('this.inputDom.clientHeight:', this.inputDom.clientHeight);
+    console.log('this.inputDom.value :>> ', this.inputDom.value);
+  }
+
   render() {
     return (
       <div className='comment-input'>
         <div className='comment-field'>
           <div className='comment-field-label'>用户名:</div>
           <div className='comment-field-input'>
-            <input type='text' value={this.state.username} onChange={this.handleUsernameChange.bind(this)} />
+            <input
+              ref={inputDom => (this.inputDom = inputDom)}
+              type='text'
+              value={this.state.username}
+              onChange={this.handleUsernameChange.bind(this)}
+            />
           </div>
         </div>
         <div className='comment-field'>
