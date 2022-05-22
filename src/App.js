@@ -12,7 +12,6 @@ class App extends Component {
         {/* <Comment /> */}
         {/* <Comment comment={1} /> */}
         <Comment comment={{ username: '张金辉', content: '我是内容;我是内容;我是内容;我是内容;' }} />
-
         <div style={{ height: '1px', margin: '20px 0', backgroundColor: '#ccc' }}></div>
         <Style />
         <div style={{ height: '1px', margin: '20px 0', backgroundColor: '#ccc' }}></div>
