@@ -1,5 +1,8 @@
-# 进度: Lesson 14 实战分析：评论功能（一）
-- https://www.bookstack.cn/read/react-naive-book/caeba5be343a774e.md
+# Github地址
+- https://github.com/huzidaha/react-naive-book/tree/remote-version/_posts
+
+# React.js 小书: 书栈网地址
+- https://www.bookstack.cn/books/react-naive-book
 
 ### `npm start`
 
