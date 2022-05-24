@@ -20,9 +20,9 @@ class CommentItem extends Component {
 
   _updateTimeString() {
     const comment = { ...this.props.comment };
-    const duration = (new Date().getTime() - comment.createdTime.getTime()) / 1000;
-    console.log('comment', comment);
-    console.log('duration', duration);
+    // console.log('_updateTimeString comment', comment);
+    const duration = (new Date().getTime() - comment.createdTime) / 1000;
+    // console.log('_updateTimeString duration', duration);
     this.setState({
       timeStr: duration > 60 ? `${Math.round(duration / 60)} 分钟前` : `${Math.round(Math.max(duration, 1))} 秒前`
     });

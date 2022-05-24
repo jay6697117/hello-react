@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import './assets/style/comment-list.css';
 import CommentItem from './CommentItem';
+import PropTypes from 'prop-types';
 
 class CommentList extends Component {
+  static propTypes = {
+    comments: PropTypes.array.isRequired
+  };
+
   static defaultProps = {
     comments: []
   };
