@@ -3,6 +3,8 @@ import './assets/style/comment-item.css';
 import PropTypes from 'prop-types';
 
 class CommentItem extends Component {
+  _timer = null;
+
   static propTypes = {
     comment: PropTypes.object.isRequired
   };
@@ -15,14 +17,21 @@ class CommentItem extends Component {
   }
 
   componentWillMount() {
+    console.log('this._timer', this._timer);
     this._updateTimeString();
+    this._timer = setInterval(() => {
+      this._updateTimeString();
+    }, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._timer);
+    this._timer = null;
   }
 
   _updateTimeString() {
     const comment = { ...this.props.comment };
-    // console.log('_updateTimeString comment', comment);
-    const duration = (new Date().getTime() - comment.createdTime) / 1000;
-    // console.log('_updateTimeString duration', duration);
+    const duration = (Date.now() - comment.createdTime) / 1000;
     this.setState({
       timeStr: duration > 60 ? `${Math.round(duration / 60)} 分钟前` : `${Math.round(Math.max(duration, 1))} 秒前`
     });
