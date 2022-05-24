@@ -26,24 +26,15 @@ class CommentInput extends Component {
 
   _initCommentInput() {
     const username = localStorage.getItem('USERNAME');
-    const content = localStorage.getItem('CONTENT');
     if (username) {
       this.setState({
         username
-      });
-    }
-    if (content) {
-      this.setState({
-        content
       });
     }
   }
 
   _saveUsername(username) {
     localStorage.setItem('USERNAME', username);
-  }
-  _saveContent(content) {
-    localStorage.setItem('CONTENT', content);
   }
 
   handleUsernameChange(event) {
@@ -57,7 +48,6 @@ class CommentInput extends Component {
     console.log('handleContentChange event.target.value:', event.target.value);
     const content = event.target.value;
     this.setState({ content });
-    this._saveContent(content);
   }
 
   handleSubmit(event) {
