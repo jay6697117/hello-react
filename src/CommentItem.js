@@ -21,7 +21,7 @@ class CommentItem extends Component {
     this._updateTimeString();
     this._timer = setInterval(() => {
       this._updateTimeString();
-    }, 5000);
+    }, 3000);
   }
 
   componentWillUnmount() {
@@ -38,7 +38,7 @@ class CommentItem extends Component {
   }
 
   render() {
-    console.log('CommentItem render this.props', this.props);
+    // console.log('CommentItem render this.props', this.props);
     return (
       <div className='comment-item'>
         <div className='comment-username'>{this.props.comment.username}:</div>
