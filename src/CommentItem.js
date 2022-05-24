@@ -17,7 +17,7 @@ class CommentItem extends Component {
   }
 
   componentWillMount() {
-    console.log('this._timer', this._timer);
+    console.log('componentWillMount this._timer:', this._timer);
     this._updateTimeString();
     this._timer = setInterval(() => {
       this._updateTimeString();
