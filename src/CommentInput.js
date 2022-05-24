@@ -17,19 +17,23 @@ class CommentInput extends Component {
   }
 
   componentWillMount() {
-    this._load();
+    this._init();
   }
 
   componentDidMount() {
     this.textareaDom.focus();
   }
 
-  _load() {
+  _init() {
     const username = localStorage.getItem('USERNAME');
     const content = localStorage.getItem('CONTENT');
     if (username) {
       this.setState({
-        username,
+        username
+      });
+    }
+    if (content) {
+      this.setState({
         content
       });
     }
