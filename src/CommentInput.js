@@ -17,24 +17,29 @@ class CommentInput extends Component {
   }
 
   componentWillMount() {
-    this._loadUsername();
+    this._load();
   }
 
   componentDidMount() {
     this.textareaDom.focus();
   }
 
-  _loadUsername() {
+  _load() {
     const username = localStorage.getItem('USERNAME');
+    const content = localStorage.getItem('CONTENT');
     if (username) {
       this.setState({
-        username
+        username,
+        content
       });
     }
   }
 
   _saveUsername(username) {
     localStorage.setItem('USERNAME', username);
+  }
+  _saveContent(content) {
+    localStorage.setItem('CONTENT', content);
   }
 
   handleUsernameChange(event) {
@@ -48,9 +53,11 @@ class CommentInput extends Component {
 
   handleContentChange(event) {
     console.log('handleContentChange event.target.value:', event.target.value);
+    const content = event.target.value;
     this.setState({
-      content: event.target.value
+      content
     });
+    this._saveContent(content);
   }
 
   handleSubmit(event) {
