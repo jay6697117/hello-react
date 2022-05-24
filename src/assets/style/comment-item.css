@@ -13,7 +13,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-right: 5px;
   flex-shrink: 0;
   color: #00a3cf;
   font-style: italic;
@@ -25,7 +24,7 @@
   justify-content: flex-start;
   align-items: center;
   margin: 0;
-
+  padding: 0 4px;
 }
 
 .comment-item .comment-time-str {
