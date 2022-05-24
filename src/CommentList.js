@@ -11,13 +11,22 @@ class CommentList extends Component {
   static defaultProps = {
     comments: []
   };
+
+  handleListDeleteComment(index) {
+    console.log('handleListDeleteComment index:',index);
+    if (this.props.onDeleteComment) {
+      this.props.onDeleteComment(index);
+    }
+  }
   render() {
     console.log('CommentList render this.props.comments:', this.props.comments);
 
     const listDom = (
       <div className='comment-list'>
         {this.props.comments.map((item, index) => {
-          return <CommentItem comment={item} key={index} />;
+          return (
+            <CommentItem onDeleteComment={this.handleListDeleteComment.bind(this, index)} comment={item} key={index} />
+          );
         })}
       </div>
     );

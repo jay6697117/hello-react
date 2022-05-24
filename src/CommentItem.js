@@ -37,6 +37,12 @@ class CommentItem extends Component {
     });
   }
 
+  handleDelete() {
+    console.log('handleDelete run');
+    if (this.props.onDeleteComment) {
+      this.props.onDeleteComment();
+    }
+  }
   render() {
     // console.log('CommentItem render this.props', this.props);
     return (
@@ -44,6 +50,9 @@ class CommentItem extends Component {
         <div className='comment-username'>{this.props.comment.username}:</div>
         <div className='comment-content'>{this.props.comment.content}</div>
         <div className='comment-time-str'>{this.state.timeStr}</div>
+        <button onClick={this.handleDelete.bind(this)} style={{ height: '20px', marginLeft: '4px', padding: '0 4px' }}>
+          删除
+        </button>
       </div>
     );
   }
