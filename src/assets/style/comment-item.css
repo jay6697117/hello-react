@@ -8,6 +8,9 @@
 }
 
 .comment-item .comment-username {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   padding-right: 5px;
   flex-shrink: 0;
   color: #00a3cf;
@@ -15,5 +18,17 @@
 }
 
 .comment-item .comment-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+
+}
+
+.comment-item .comment-time-str {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   margin: 0;
 }

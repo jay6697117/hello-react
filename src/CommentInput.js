@@ -17,14 +17,14 @@ class CommentInput extends Component {
   }
 
   componentWillMount() {
-    this._init();
+    this._initCommentInput();
   }
 
   componentDidMount() {
     this.textareaDom.focus();
   }
 
-  _init() {
+  _initCommentInput() {
     const username = localStorage.getItem('USERNAME');
     const content = localStorage.getItem('CONTENT');
     if (username) {
@@ -49,18 +49,14 @@ class CommentInput extends Component {
   handleUsernameChange(event) {
     console.log('handleUsernameChange event.target.value:', event.target.value);
     const username = event.target.value;
-    this.setState({
-      username
-    });
+    this.setState({ username });
     this._saveUsername(username);
   }
 
   handleContentChange(event) {
     console.log('handleContentChange event.target.value:', event.target.value);
     const content = event.target.value;
-    this.setState({
-      content
-    });
+    this.setState({ content });
     this._saveContent(content);
   }
 
@@ -69,7 +65,8 @@ class CommentInput extends Component {
     console.log('handleSubmit this.props:', this.props);
     if (this.props.onSubmitComment) {
       const { username, content } = this.state;
-      this.props.onSubmitComment({ username, content });
+      const createdTime = new Date();
+      this.props.onSubmitComment({ username, content, createdTime });
       this.setState({
         content: ''
       });

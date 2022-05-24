@@ -7,7 +7,7 @@ class CommentList extends Component {
     comments: []
   };
   render() {
-    // console.log('CommentList render this.props.comments:', this.props.comments);
+    console.log('CommentList render this.props.comments:', this.props.comments);
 
     const listDom = (
       <div className='comment-list'>
