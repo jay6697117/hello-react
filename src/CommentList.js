@@ -5,17 +5,18 @@ import PropTypes from 'prop-types';
 
 class CommentList extends Component {
   static propTypes = {
-    comments: PropTypes.array.isRequired
+    comments: PropTypes.array.isRequired,
+    onDeleteComment: PropTypes.func
   };
 
   static defaultProps = {
     comments: []
   };
 
-  handleListDeleteComment(index) {
-    console.log('handleListDeleteComment index:',index);
+  handleListDeleteComment(currentIndex) {
+    console.log('handleListDeleteComment currentIndex:', currentIndex);
     if (this.props.onDeleteComment) {
-      this.props.onDeleteComment(index);
+      this.props.onDeleteComment(currentIndex);
     }
   }
   render() {
@@ -25,7 +26,12 @@ class CommentList extends Component {
       <div className='comment-list'>
         {this.props.comments.map((item, index) => {
           return (
-            <CommentItem onDeleteComment={this.handleListDeleteComment.bind(this, index)} comment={item} key={index} />
+            <CommentItem
+              currentIndex={index}
+              onDeleteComment={this.handleListDeleteComment.bind(this)}
+              comment={item}
+              key={index}
+            />
           );
         })}
       </div>

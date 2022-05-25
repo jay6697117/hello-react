@@ -46,11 +46,11 @@ class CommentApp extends Component {
     this._saveComments(commentsTemp);
   }
 
-  handleAppDeleteComment(index) {
-    console.log('handleAppDeleteComment index', index);
+  handleAppDeleteComment(currentIndex) {
+    console.log('handleAppDeleteComment currentIndex', currentIndex);
     const commentsTemp = [...this.state.comments]; //浅拷贝
     console.log('handleSubmitComment commentsTemp:', commentsTemp);
-    commentsTemp.splice(index, 1);
+    commentsTemp.splice(currentIndex, 1);
     this.setState({ comments: commentsTemp });
     this._saveComments(commentsTemp);
   }
