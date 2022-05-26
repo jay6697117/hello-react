@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Hoc from './Hoc'; //Hoc是一个函数
 import PropTypes from 'prop-types';
-console.log('Input PropTypes:', PropTypes);
+// console.log('Input PropTypes:', PropTypes);
 
 class Input extends Component {
   static propTypes = {
-    data: PropTypes.string
+    data: PropTypes.string,
+    onWrappedChange: PropTypes.func
   };
 
   handleChange(e) {

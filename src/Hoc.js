@@ -36,7 +36,7 @@ const Hoc = (WrappedComponent, name) => {
 
     render() {
       // 渲染的时候再通过 props.data 传给WrappedComponent
-      console.log('Hoc this.props:', this.props);
+      // console.log('Hoc this.props:', this.props);
       return (
         <div className='hoc'>
           用户名: <WrappedComponent onWrappedChange={this.handleWrappedChange.bind(this)} data={this.state.data} />
