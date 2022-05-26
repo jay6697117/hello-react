@@ -12,20 +12,30 @@ const Hoc = (WrappedComponent, name) => {
     }
 
     componentWillMount() {
+      this._initData();
+    }
+
+    _initData() {
       // 新组件挂载前会先去 localStorage 加载数据
       let data = localStorage.getItem(name);
-      this.setState({ data });
+      if (data) {
+        this.setState({ data });
+      }
+    }
+
+    _saveData(data) {
+      localStorage.setItem(name, data);
     }
 
     handleWrappedChange(val) {
-      console.log('handleWrappedChange val:', val);
+      console.log('Hoc handleWrappedChange val:', val);
       const data = val;
       this.setState({ data });
+      this._saveData(data);
     }
 
     render() {
       // 渲染的时候再通过 props.data 传给WrappedComponent
-
       console.log('Hoc this.props:', this.props);
       return (
         <div className='hoc'>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Hoc from './Hoc'; //Hoc是一个函数
 import PropTypes from 'prop-types';
-console.log('PropTypes:', PropTypes);
+console.log('Input PropTypes:', PropTypes);
 
 class Input extends Component {
   static propTypes = {
@@ -9,7 +9,7 @@ class Input extends Component {
   };
 
   handleChange(e) {
-    console.log('handleChange e.target.value:', e.target.value);
+    console.log('Input handleChange e.target.value:', e.target.value);
     const val = e.target.value;
     if (this.props.onWrappedChange) {
       this.props.onWrappedChange(val);
@@ -17,7 +17,7 @@ class Input extends Component {
   }
 
   render() {
-    console.log('App this.props:', this.props);
+    console.log('Input this.props:', this.props);
     return <input onChange={this.handleChange.bind(this)} value={this.props.data || ''} />;
   }
 }
