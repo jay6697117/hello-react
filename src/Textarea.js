@@ -24,6 +24,6 @@ class Textarea extends Component {
 }
 
 Textarea = Hoc(Textarea, 'CONTENT');
-console.log('Textarea:', Textarea);
+// console.log('Textarea:', Textarea);
 
 export default Textarea;

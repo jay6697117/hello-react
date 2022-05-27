@@ -24,6 +24,6 @@ class Input extends Component {
 }
 
 Input = Hoc(Input, 'USERNAME');
-console.log('Input:', Input);
+// console.log('Input:', Input);
 
 export default Input;
