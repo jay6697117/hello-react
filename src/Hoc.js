@@ -48,11 +48,16 @@ const Hoc = (WrappedComponent, name) => {
       localStorage.setItem(name, data);
     }
 
-    handleWrappedBlur(val) {
-      console.log('Hoc handleWrappedBlur val:', val);
+    handleWrappedChange(val) {
+      console.log('Hoc handleWrappedChange val:', val);
       const data = val;
       this.setState({ data });
-      this._asyncInit(data);
+      this._saveData(data);
+    }
+
+    handleWrappedBlur(val) {
+      console.log('Hoc handleWrappedBlur val:', val);
+      this._asyncInit(val);
     }
 
     render() {
@@ -63,6 +68,7 @@ const Hoc = (WrappedComponent, name) => {
           <div className='name'>
             搜索用户名:{' '}
             <WrappedComponent
+              onWrappedChange={this.handleWrappedChange.bind(this)}
               onWrappedBlur={this.handleWrappedBlur.bind(this)}
               data={this.state.data}
             />
