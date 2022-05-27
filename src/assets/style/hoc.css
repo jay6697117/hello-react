@@ -1,5 +1,14 @@
 .hoc {
   width: 100%;
+  background-color: #eee;
+}
+
+.hoc .name {
+  padding: 20px 20px 0;
+}
+
+.hoc .info {
   padding: 20px;
-  background-color: #ccc;
+  word-wrap: break-word;
+  word-break: normal;
 }

@@ -6,20 +6,25 @@ import PropTypes from 'prop-types';
 class Input extends Component {
   static propTypes = {
     data: PropTypes.string,
-    onWrappedChange: PropTypes.func
+    onWrappedBlur: PropTypes.func
   };
 
-  handleChange(e) {
-    console.log('Input handleChange e.target.value:', e.target.value);
+  handleBlur(e) {
+    console.log('Input handleBlur e.target.value:', e.target.value);
     const val = e.target.value;
-    if (this.props.onWrappedChange) {
-      this.props.onWrappedChange(val);
+    if (this.props.onWrappedBlur) {
+      this.props.onWrappedBlur(val);
     }
   }
 
   render() {
     console.log('Input this.props:', this.props);
-    return <input onChange={this.handleChange.bind(this)} value={this.props.data || ''} />;
+    return (
+      <input
+        onBlur={this.handleBlur.bind(this)}
+        value={this.props.data || ''}
+      />
+    );
   }
 }
 
