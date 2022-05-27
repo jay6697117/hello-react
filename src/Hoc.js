@@ -8,7 +8,7 @@ const Hoc = (WrappedComponent, name) => {
       super();
       this.state = {
         data: null,
-        info: null
+        info: {}
       };
     }
 
@@ -26,7 +26,7 @@ const Hoc = (WrappedComponent, name) => {
             return result;
           })
           .then(res => {
-            console.log('res:', res);
+            // console.log('res:', res);
             return {
               id: res.id,
               name: res.name,
@@ -42,7 +42,7 @@ const Hoc = (WrappedComponent, name) => {
         if (info.id) {
           this.setState({ info });
         } else {
-          this.setState({ info: null });
+          this.setState({ info: {} });
         }
       } catch (error) {
         console.log('_asyncInit error:', error);
@@ -52,6 +52,7 @@ const Hoc = (WrappedComponent, name) => {
     _initData() {
       // 新组件挂载前会先去 localStorage 加载数据
       let data = localStorage.getItem(name);
+      console.log('typeof data', typeof data);
       if (data) {
         this.setState({ data });
         this._asyncInit(data);
@@ -80,7 +81,7 @@ const Hoc = (WrappedComponent, name) => {
       return (
         <div className='hoc'>
           <div className='name'>
-            搜索用户名:{' '}
+            <span style={{ paddingRight: '5px' }}>用户名:</span>
             <WrappedComponent
               onWrappedChange={this.handleWrappedChange.bind(this)}
               onWrappedBlur={this.handleWrappedBlur.bind(this)}
@@ -91,12 +92,15 @@ const Hoc = (WrappedComponent, name) => {
             <div>用户信息:</div>
             <div style={{ backgroundColor: '#ccc', padding: '10px' }}>
               <div style={{ marginBottom: '10px' }}>
-                {this.state.info ? JSON.stringify(this.state.info) : '--默认内容--'}
+                <div>name: {this.state.info.name || '--'}</div>
+                <div>login: {this.state.info.login || '--'}</div>
+                <div>location: {this.state.info.location || '--'}</div>
+                <div>blog: {this.state.info.blog || '--'}</div>
               </div>
               <img
                 style={{ borderRadius: '50%' }}
                 src={
-                  this.state.info
+                  this.state.info.avatar_url
                     ? this.state.info.avatar_url
                     : 'https://s0.lgstatic.com/i/image2/M01/14/FB/CgoB5lyrcBGAFyGsAAGmQ6jLb7I829.png'
                 }
