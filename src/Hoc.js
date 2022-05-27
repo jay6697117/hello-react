@@ -33,7 +33,7 @@ const Hoc = (WrappedComponent, name) => {
               login: res.login,
               location: res.location,
               blog: res.blog,
-              url: res.url
+              avatar_url: res.avatar_url
             };
           });
 
@@ -90,8 +90,19 @@ const Hoc = (WrappedComponent, name) => {
           <div className='info'>
             <div>用户信息:</div>
             <div style={{ backgroundColor: '#ccc', padding: '10px' }}>
-              <div>{this.state.info ? JSON.stringify(this.state.info) : '--'}</div>
-              <img src={this.state.info.avatar_url} alt='avatar' />
+              <div style={{ marginBottom: '10px' }}>
+                {this.state.info ? JSON.stringify(this.state.info) : '--默认内容--'}
+              </div>
+              <img
+                style={{ borderRadius: '50%' }}
+                src={
+                  this.state.info
+                    ? this.state.info.avatar_url
+                    : 'https://s0.lgstatic.com/i/image2/M01/14/FB/CgoB5lyrcBGAFyGsAAGmQ6jLb7I829.png'
+                }
+                alt='avatar'
+                width='100'
+              />
             </div>
           </div>
           <hr />
