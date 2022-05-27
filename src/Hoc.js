@@ -90,7 +90,8 @@ const Hoc = (WrappedComponent, name) => {
           <div className='info'>
             <div>用户信息:</div>
             <div style={{ backgroundColor: '#ccc', padding: '10px' }}>
-              {this.state.info ? JSON.stringify(this.state.info) : '--'}
+              <div>{this.state.info ? JSON.stringify(this.state.info) : '--'}</div>
+              <img src={this.state.info.avatar_url} alt='avatar' />
             </div>
           </div>
           <hr />
