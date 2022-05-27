@@ -76,8 +76,9 @@ const Hoc = (WrappedComponent, name) => {
     }
 
     render() {
-      // 渲染的时候再通过 props.data 传给WrappedComponent
       // console.log('Hoc this.props:', this.props);
+
+      // 渲染的时候再通过 props.data 传给WrappedComponent
       return (
         <div className='hoc'>
           <div className='name'>
