@@ -24,11 +24,25 @@ const Hoc = (WrappedComponent, name) => {
           })
           .then(result => {
             return result;
+          })
+          .then(res => {
+            console.log('res:', res);
+            return {
+              id: res.id,
+              name: res.name,
+              login: res.login,
+              location: res.location,
+              blog: res.blog,
+              url: res.url
+            };
           });
 
         console.log('info:', info);
+
         if (info.id) {
           this.setState({ info });
+        } else {
+          this.setState({ info: null });
         }
       } catch (error) {
         console.log('_asyncInit error:', error);
@@ -73,7 +87,12 @@ const Hoc = (WrappedComponent, name) => {
               data={this.state.data}
             />
           </div>
-          <div className='info'>用户信息:{JSON.stringify(this.state.info)}</div>
+          <div className='info'>
+            <div>用户信息:</div>
+            <div style={{ backgroundColor: '#ccc', padding: '10px' }}>
+              {this.state.info ? JSON.stringify(this.state.info) : '--'}
+            </div>
+          </div>
           <hr />
         </div>
       );
