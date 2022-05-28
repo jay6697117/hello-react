@@ -4,3 +4,8 @@
   background-color: #eee;
   padding:20px;
 }
+
+
+.app > * {
+  margin-bottom: 20px;
+}
