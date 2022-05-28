@@ -4,7 +4,7 @@ class Content extends Component {
   render() {
     return (
       <div>
-        <h2>React.js 小书内容</h2>
+        <p>React.js 小书内容 666</p>
       </div>
     );
   }
@@ -13,12 +13,12 @@ class Content extends Component {
 class Main extends Component {
   render() {
     return (
-      <div>
-        <h2>This is main</h2>
+      <div className='main'>
+        <p>This is main</p>
         <Content />
       </div>
     );
   }
 }
 
-export default Main
+export default Main;

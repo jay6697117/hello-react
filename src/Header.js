@@ -9,7 +9,7 @@ class Title extends Component {
 class Header extends Component {
   render() {
     return (
-      <div>
+      <div className="header">
         <h2>This is header</h2>
         <Title />
       </div>
