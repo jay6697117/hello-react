@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 class App extends Component {
   _timer = null;
+
   // childContextTypes 作用跟 propTypes 验证组件 props 参数的作用类似
   static childContextTypes = {
     themeColor: PropTypes.string
@@ -19,6 +20,7 @@ class App extends Component {
   }
 
   componentWillMount() {
+    console.log('this._timer 0:', this._timer);
     this._timer = setTimeout(() => {
       this.setState({
         themeColor: 'blue'
