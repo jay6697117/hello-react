@@ -5,7 +5,7 @@ import Main from './Main';
 import PropTypes from 'prop-types';
 
 class App extends Component {
-  _timer = null;
+  _timer = 111;
 
   // childContextTypes 作用跟 propTypes 验证组件 props 参数的作用类似
   static childContextTypes = {
@@ -14,13 +14,14 @@ class App extends Component {
 
   constructor() {
     super();
+    console.log('this._timer 0:', this._timer);
     this.state = {
       themeColor: 'red'
     };
   }
 
   componentWillMount() {
-    console.log('this._timer 0:', this._timer);
+    console.log('this._timer 1:', this._timer);
     this._timer = setTimeout(() => {
       this.setState({
         themeColor: 'blue'
