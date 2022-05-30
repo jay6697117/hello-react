@@ -5,7 +5,7 @@ import Main from './Main';
 import PropTypes from 'prop-types';
 
 class App extends Component {
-  _timer = 111;
+  _timer = null;
 
   // childContextTypes 作用跟 propTypes 验证组件 props 参数的作用类似
   static childContextTypes = {
