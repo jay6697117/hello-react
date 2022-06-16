@@ -7,8 +7,8 @@
 # Examples for React Naive Book
 - https://github.com/huzidaha/react-naive-book-examples
 
-# Lesson 30 动手实现 Redux（一）：优雅地修改共享状态
-- https://www.bookstack.cn/read/react-naive-book/10294abfae8ede94.md
+# Lesson 31 动手实现 Redux（二）：抽离 store 和监控数据变化
+- https://www.bookstack.cn/read/react-naive-book/caed337730b2df57.md
 
 ### `npm start`
 
